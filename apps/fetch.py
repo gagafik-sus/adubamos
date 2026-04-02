@@ -1,0 +1,12 @@
+import time
+print()
+print("|========|")
+time.sleep(0.1)
+print("|AdubamOS|   AdubamOS pre1 1.0")
+time.sleep(0.1)
+print("|( 0)(0 )|   Adu-Shell v0.9r")
+time.sleep(0.1)
+print("|   --   |   r - release")
+time.sleep(0.1)
+print("|========|   b - beta")
+print()
