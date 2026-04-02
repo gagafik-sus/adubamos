@@ -235,7 +235,9 @@ if __name__ == "__main__":
     |( 0)(0 )|
     |    --  |
     |========|
+    tg channel - t.me/adubamos
     """)
+    print("github version")
 
 
 
