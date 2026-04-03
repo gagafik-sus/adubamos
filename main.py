@@ -47,10 +47,14 @@ apm - adubam package manager
                 iaiai = "vanilla"
                 print("vanilla")
 
-        elif os.path.exists(f"apps/{shellcommand}.py"):
-            with open(f"apps/{shellcommand}.py", "r", encoding="utf-8") as f:
+        parts = shellcommand.split()
+        cmd = parts[0]
+        args = parts[1:]
+
+        if os.path.exists(f"apps/{cmd}.py"):
+            with open(f"apps/{cmd}.py", "r", encoding="utf-8") as f:
                 code = f.read()
-                exec(code, globals())
+                exec(code, {"args": args})
 
         elif os.path.exists(f"mods/{shellcommand}.py"):
             exec(open(f"mods/{shellcommand}.py").read())
