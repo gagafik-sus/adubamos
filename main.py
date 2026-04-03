@@ -23,6 +23,7 @@ def shell():
 
         elif shellcommand == "clear":
             os.system('clear')
+            continue
 
         elif shellcommand == "help":
             print("""
@@ -46,8 +47,11 @@ apm - adubam package manager
             else:
                 iaiai = "vanilla"
                 print("vanilla")
+            continue
 
         parts = shellcommand.split()
+        if not parts:
+            continue
         cmd = parts[0]
         args = parts[1:]
 
@@ -64,7 +68,6 @@ apm - adubam package manager
 
         else:
             print(shellcommand, " - комманда не найдена type - help")
-
 
 def download_mod():
     BASE_URL = "https://raw.githubusercontent.com/gagafik-sus/test/main/"
