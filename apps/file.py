@@ -40,15 +40,37 @@ elif cmd == "ch":
         os.system(f"cat {' '.join(subargs)}")
 
 elif cmd == "e":
-    if not subargs:
-        print("usage: file e <filename> [nano|vim]")
-    else:
-        filename = subargs[0]
-        editor = subargs[1] if len(subargs) > 1 else "nano"
+    print("""
+    ### ⚠️ File Edit is no longer supported
 
-        if editor not in ["nano", "vim"]:
-            print("unknown editor, using nano")
-            editor = "nano"
+**Sorry, but the built-in file editor is no longer working.**
+
+Please install our new text editor using APM:
+
+```
+apm
+ate
+```
+
+### ✨ Recommended replacement
+
+**ate** — a lightweight and fast text editor for AdubamOS
+
+* Simple interface
+* Keyboard-driven workflow
+* Works well even on small displays
+
+### 🚀 Usage
+
+```
+ate ./file.txt
+```
+
+---
+
+Thank you for using **AdubamOS** 💙
+
+    """)
 
         os.system(f"{editor} {filename}")
 
