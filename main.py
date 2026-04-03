@@ -225,7 +225,7 @@ if __name__ == "__main__":
     """)
     time.sleep(0.12)
     os.system('clear')
-    print('AdubamOS pre2 1.0', iaiai)
+    print('AdubamOS pre3 1.0', iaiai)
     print("""
     |========|
     |AdubamOS|
@@ -235,7 +235,7 @@ if __name__ == "__main__":
     """)
     time.sleep(0.12)
     os.system('clear')
-    print('AdubamOS pre2 1.0', iaiai)
+    print('AdubamOS pre4 1.0', iaiai)
     print("""
     |========|
     |AdubamOS|
