@@ -98,7 +98,7 @@ AdubamOS is about:
 
 ## 📜 License
 
-MIT License (or choose your own)
+MIT License
 
 ---
 
