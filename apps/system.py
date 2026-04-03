@@ -1,28 +1,35 @@
 import os
 
-print()
-print('system v0.2')
-print('type "help"')
-print()
-while True:
-    print()
-    sc = input('system-v0.2 -$ ')
+if not args:
+    cmd = "help"
+else:
+    cmd = args[0]
+    subargs = args[1:]
 
-    if sc == "exit":
-        break
-
-    elif sc == "help":
-        print( """
+if cmd == "help":
+    print("""
+        system.py 0.3
 
 commands system:
-help - help
-shell - system shell (bash, fish, zsh)
-exit - exit
+help        - help
+shell       - run system command
 
-                  """)
+usage:
+system shell <command>
+    """)
 
-    elif sc == "shell":
-        print("enter your system command. например: sudo rm -rf /*")
-        yshell = input("type your command (you can write bash to use):  ")
-        print("your command - ", yshell)
-        os.system(yshell)
+elif cmd == "shell":
+    if not subargs:
+        print("usage: system shell <command>")
+    else:
+        command = " ".join(subargs)
+
+        if "rm -rf /" in command:
+            print("💀 nice try")
+        else:
+            print("running:", command)
+            os.system(command)
+
+
+else:
+    print("unknown command:", cmd)

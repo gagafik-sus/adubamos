@@ -1,45 +1,60 @@
 import os
 
-print("""
-                file help:
-                c - create
-                ch - check
-                e - edit
-                l - list
-                q - exit
+if not args:
+    cmd = "help"
+else:
+    cmd = args[0]
+    subargs = args[1:]
 
-""")
+if cmd == "help":
+    print("""
+file commands:
+c <file>            - create file
+ch <file>           - show file (cat)
+e <file> [editor]   - edit file (nano/vim)
+l [dir]             - list directory
 
-while True:
-    fc = input('file-v0.2 -$ ')
+examples:
+file c test.txt
+file ch test.txt
+file e test.txt nano
+file l
+file l /home
+    """)
 
-    if fc == "q":
-        break
-
-    elif fc == "c":
-        cf = input('create file: ')
-        os.system(f"touch {cf}")
-        print(cf, " - успешно создан. сасалити")
-
-    elif fc == "ch":
-        ch = input('look at the file: ')
-        os.system(f"cat {ch}")
-
-    elif fc == "e":
-        ef = input('file: ')
-        editor = input('vim or nano (deflault - nano)? ')
-        if editor == "vim":
-	        os.system(f"vim {ef}")
-        else:
-	        os.system(f"nano {ef}")
-
-    elif fc == "l":
-        us = input('use sudo (y - yes)? ')
-        dirr = input('dir (deflault - enter) ')
-        if us == "y":
-	        os.system(f"sudo ls {dirr}")
-        else:
-	        os.system(f"ls {dirr}")
-
+elif cmd == "c":
+    if not subargs:
+        print("usage: file c <filename>")
     else:
-        print('error: command not found')
+        filename = subargs[0]
+        try:
+            open(filename, "a").close()
+            print(filename, "- created")
+        except Exception as e:
+            print("error:", e)
+
+elif cmd == "ch":
+    if not subargs:
+        print("usage: file ch <filename>")
+    else:
+        os.system(f"cat {' '.join(subargs)}")
+
+elif cmd == "e":
+    if not subargs:
+        print("usage: file e <filename> [nano|vim]")
+    else:
+        filename = subargs[0]
+        editor = subargs[1] if len(subargs) > 1 else "nano"
+
+        if editor not in ["nano", "vim"]:
+            print("unknown editor, using nano")
+            editor = "nano"
+
+        os.system(f"{editor} {filename}")
+
+elif cmd == "l":
+    directory = subargs[0] if subargs else ""
+    os.system(f"ls {directory}")
+
+else:
+    print("unknown command:", cmd)
