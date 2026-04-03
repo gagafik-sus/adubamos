@@ -15,7 +15,7 @@ print("загрузка shell")
 
 def shell():
     while True:
-        shellcommand = input('Adubam Shell v0.9 -$ ')
+        shellcommand = input('Adubam Shell v0.9beta -$ ')
 
         if shellcommand == "q":
             print('command: exit (q)')
@@ -211,7 +211,7 @@ if __name__ == "__main__":
     else:
         iaiai = "vanilla"
 
-    print('AdubamOS pre1 1.0', iaiai)
+    print('AdubamOS pre2 1.0', iaiai)
     time.sleep(0.1)
     print("""
     |========|
@@ -222,7 +222,7 @@ if __name__ == "__main__":
     """)
     time.sleep(0.12)
     os.system('clear')
-    print('AdubamOS pre1 1.0', iaiai)
+    print('AdubamOS pre2 1.0', iaiai)
     print("""
     |========|
     |AdubamOS|
@@ -232,7 +232,7 @@ if __name__ == "__main__":
     """)
     time.sleep(0.12)
     os.system('clear')
-    print('AdubamOS pre1 1.0', iaiai)
+    print('AdubamOS pre2 1.0', iaiai)
     print("""
     |========|
     |AdubamOS|
