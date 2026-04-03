@@ -40,39 +40,12 @@ elif cmd == "ch":
         os.system(f"cat {' '.join(subargs)}")
 
 elif cmd == "e":
-    print("""
-    ### ⚠️ File Edit is no longer supported
-
-**Sorry, but the built-in file editor is no longer working.**
-
-Please install our new text editor using APM:
-
-```
-apm
-ate
-```
-
-### ✨ Recommended replacement
-
-**ate** — a lightweight and fast text editor for AdubamOS
-
-* Simple interface
-* Keyboard-driven workflow
-* Works well even on small displays
-
-### 🚀 Usage
-
-```
-ate ./file.txt
-```
-
----
-
-Thank you for using **AdubamOS** 💙
-
-    """)
-
-        os.system(f"{editor} {filename}")
+    if not subargs:
+        print("usage: file e <filename>")
+    else:
+        filename = subargs[0]
+        print(f"file edit is no longer supported")
+        print(f"use: ate {filename}")
 
 elif cmd == "l":
     directory = subargs[0] if subargs else ""
