@@ -50,7 +50,6 @@ AdubamOS/
 ## 🚀 Getting Started
 
 ### Requirements
-- GNU environment
 - Python 3.x
 
 ### Run
