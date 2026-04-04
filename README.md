@@ -98,6 +98,7 @@ AdubamOS is about:
 ## 📜 License
 
 MIT License
+Copyright (c) 2025-2026 adubam (Adam Nurullaev)
 
 ---
 
